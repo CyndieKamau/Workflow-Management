@@ -20,3 +20,8 @@ There are several WMSs currently in use;
 * Snakemake
 
 We'll be discussing Snakemake.
+
+
+_**What is Snakemake?**_
+
+
