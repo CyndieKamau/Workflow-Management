@@ -38,6 +38,25 @@ Snakemake can be installed in a Conda environment, using:
 `conda install snakemake`
 
 
+In the directory having one's research files, say fastq files, a textfile called `Snakefile` should be created. It's where the workflow will be created.
+
+
+A general Snakemake command is as follows:
+
+```
+rule countlines:
+  input:
+     "input/file/path"
+  output:
+     "output/file/path"
+  shell:
+     "wc -l {input} > {output}"
+
+```
+
+
+
+
 
 
 
