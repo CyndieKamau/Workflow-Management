@@ -19,9 +19,27 @@ There are several WMSs currently in use;
 * Nextflow
 * Snakemake
 
-We'll be discussing Snakemake.
+We'll be discussing Snakemake as a workflow management system.
 
 
-_**What is Snakemake?**_
+##  _**What is Snakemake?**_
+
+Snakemake is a text-based workflow system which is based on the command-line, and uses python syntax since python has a pseudo-code format.
+
+It decomposes workflows to a set of rules, eg how to obtain output files from input files after running a set of commands.
+
+
+## **Snakemake Basics**
+
+### Installing Snakemake
+
+Snakemake can be installed in a Conda environment, using:
+
+`conda install snakemake`
+
+
+
+
+
 
 
