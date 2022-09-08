@@ -182,5 +182,13 @@ rule all:
 ```
 
 
+## **Config files**
 
+Config files are used for the workflow to be customizable, so that it can be easily adapted to new data.
+
+Config files can be written in `JSON` or `YAML`, and loaded with the `configfile` directive.
+
+Example, one can add `configfile: "config.yaml"` at the top of the Snakefile.
+
+Snakemake will load the config file and store its contents into a globally available dictionary named `config`
 
