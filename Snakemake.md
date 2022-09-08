@@ -81,9 +81,22 @@ _**An action :**_ A command to run the whole process. Can either be;
 * R markdown `.Rmd` file
 * Inline python code
 
+An example of a command:
+
 ```
    shell:
      "wc -l {input} > {output}"
+```
+
+An example of a rule contaning a python script:
+
+```
+rule plot_results:
+    input:
+        isoforms=rules.quantify_transcripts.output.isoforms
+    output:
+        plot="plots/my_plot.png"
+    script: "scripts/plot_things.py"
 ```
 
 
@@ -107,6 +120,9 @@ Rules can also be defined further as follows;
 
 * These files can be referred to in the shell command (or python/R scripts)
 * One can refer to the inputs/outputs of other rules 
+
+
+
 
 
 
