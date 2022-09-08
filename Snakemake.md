@@ -55,6 +55,60 @@ rule countlines:
 ```
 
 
+Rules generally specify the following;
+
+_**Name of the process undertaken :**_ In this case our process is called `countlines` 
+
+_**Input :**_ The files which the whole process will work on; They are also called **dependencies**.
+
+```
+  input:
+        "data/genome.fa"
+```
+
+_**Output :**_ The files to be created after the whole process is done.
+
+```
+   output:
+        "counted_reads/A.bam"
+```
+
+_**An action :**_ A command to run the whole process. Can either be;
+
+* Bash Script
+* Python `.py` script
+* R `.R` script
+* R markdown `.Rmd` file
+* Inline python code
+
+```
+   shell:
+     "wc -l {input} > {output}"
+```
+
+
+Rules can also be defined further as follows;
+
+* There can be multiple inputs/outputs, example:
+
+```
+   input:
+        "data/genome.fa",
+        "data/samples/A.fastq"   
+```
+
+* They can be named (using the = syntax), or just listed in order, example:
+
+```
+   output:
+        reads="sample1.fastq.gz"
+        reads="raw_data/sample1.fastq.gz"
+```
+
+* These files can be referred to in the shell command (or python/R scripts)
+* One can refer to the inputs/outputs of other rules 
+
+
 
 
 
