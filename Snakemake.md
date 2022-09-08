@@ -122,8 +122,30 @@ Rules can also be defined further as follows;
 * One can refer to the inputs/outputs of other rules 
 
 
+## **Use of wildcards in Snakemake**
 
+The previous rules are all static, meaning to be reused with different inputs and outputs one has to change the rule.
 
+For automation, the use of wildcards is necessary, since it does not specify specific input/output files to be used. Example:
+
+```
+rule align_reads:
+    input:
+        read1="raw_data/{file}"
+        read2="raw_data2/{file}"
+    output:
+        "align_reads/{file}"
+    shell:
+        """
+        STAR --genomeDir "/some/directory/to/reference" \
+            --outFileNamePrefix "{file}/STAR/results" \
+            --readFilesIn {input.file1} {input.file2}
+        """
+```
+
+To run the process, only the output is defined in the command.
+
+`snakemake align_reads/results.fastq`
 
 
 
