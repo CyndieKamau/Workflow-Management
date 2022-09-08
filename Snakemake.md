@@ -164,6 +164,23 @@ An example is:
 ![DAG visualization](https://github.com/deto/Snakemake_Tutorial/raw/master/images/my_workflow.svg)
 
 
+## **Containers**
+
+One can specify different Docker or Singularity containers for each rule.
+
+
+## **Generation of reports**
+
+To summarize the obtained results and performed steps in a comprehensive report, one uses the built-in `report` function.
+
+It is best practice to create reports in a separate rule that takes all desired results as input files and provides a single HTML file as output. Example:
+
+```
+rule all:
+    input:
+        "report.html"
+```
+
 
 
 
