@@ -147,8 +147,21 @@ To run the process, only the output is defined in the command.
 
 `snakemake align_reads/results.fastq`
 
+Snakemake will reason backwards from the output, as its _declarative_; it acts like a map showing directions.
 
 
+## **Workflow Visualization**
+
+Visualization of workflows occur in [Directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) (DAG) format.
+
+One can visualize their workflow with Snakemake by using the `--dag` command.
+
+An example is:
+
+`snakemake <rule> --dag | dot | display`
+
+
+![DAG visualization](https://github.com/deto/Snakemake_Tutorial/raw/master/images/my_workflow.svg)
 
 
 
